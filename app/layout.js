@@ -1,16 +1,28 @@
-import Navbar from '@/components/Nabvar'
-import { Inter } from 'next/font/google'
+import Navbar from "@/components/Navbar/Navbar";
+import { Roboto } from "next/font/google";
+import "./global.css";
 
-const inter = Inter({ subsets: ['latin'] })
+const roboto = Roboto({
+  weight: ["300", "400", "500", "700"],
+  style: ["italic", "normal"],
+  subsets: ["latin"],
+});
+//You can use the metadata in any layout or page
+//It's recomended only for pages that are going to be indexed in browsers
+//metadata not works with client components
+export const metadata = {
+  title: "My nextjs course",
+  description: "Main page",
+  keywords: "course, fazt,nextjs",
+};
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <head><title>My app</title></head>
-      <body className={inter.className}>
+      <body className={roboto.className}>
         <Navbar />
         {children}
       </body>
     </html>
-  )
+  );
 }
