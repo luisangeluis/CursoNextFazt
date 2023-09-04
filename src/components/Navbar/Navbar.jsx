@@ -20,6 +20,9 @@ const Navbar = () => {
         <li>
           <Link href={"/posts"}>Posts</Link>
         </li>
+        <li>
+          <Link href={"/users"}>Users</Link>
+        </li>
       </ul>
     </nav>
   );
